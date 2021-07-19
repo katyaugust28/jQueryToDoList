@@ -18,7 +18,7 @@ function newItem(){
     li.append(inputValue);
   });
 }
-
+ 
 
 
 //marking an item as done (not doing it)
