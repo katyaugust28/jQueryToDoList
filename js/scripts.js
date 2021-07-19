@@ -10,18 +10,22 @@ function newItem(){
     $("#list").append(li);
   }
 
-  // add an X close button
+  //Crossing out an item from the List
+  li.on("dblclick", function crossOut(){
+    li.toggleClass("strike");
+  });
 
+  //Adding the delete button (X)
+  let crossOutButton = $("<crossOutButton></crossOutButton>");
+  crossOutButton.append(document.createTextNode("X"));
+  li.append(crossOutButton);
 
+  //Adding the class delete from css:
+  function deleteListItem() {
+    li.addClass("delete"); //hides the item with display:none on css
+  }
+  crossOutButton.on("click", deleteListItem);
+
+  //Reordering the items in a list
+  $("#list").sortable();
 }
-
-
-
-
-//marking an item as done (not doing it)
-
-
-//deleting a task (deleted the number 2 completely)
-
-
-//using an event handler to cross out an item (not working)
